@@ -1,0 +1,58 @@
+Windows
+
+CREATE
+We are using POST for API Creation
+
+Example:-
+1. POST (Create a table "song" and populate 1st row entry as below)
+curl -i -H "Content-Type: application/json" -X POST -d "{""songname"":""summer"", ""songduration"" : ""15"" ,""songuploadtime"" : ""2021-03-12 17:30:21""}" http://localhost:5000/song/
+
+
+=================================================================================================================================================================================================================================================================================
+
+READ
+
+We are using GET API
+Example:-
+1. GET (FETCH ID 1  details from table "song")
+   curl -i -H "Content-Type: application/json" http://localhost:5000/song/1
+
+=================================================================================================================================================================================================================================================================================
+
+UPDATE
+
+We can Use either PUT or POST API (By explicitly specifying , Table Name and 'ID')
+
+Example:-
+curl -i -H "Content-Type: application/json" -X PUT -d "{""songname"":""winter"", ""songduration"" : ""15"" ,""songuploadtime"" : ""2021-03-12 17:30:21""}" http://localhost:5000/song/2
+OR
+curl -i -H "Content-Type: application/json" -X POST -d "{""songname"":""winter"", ""songduration"" : ""15"" ,""songuploadtime"" : ""2021-03-12 17:30:21""}" http://localhost:5000/song/2
+
+
+====================================================================================================================================================================================================================================================================================
+
+DELETE ( Explicitly specifying table name and 'ID' as below)
+
+Example:-
+curl -i -X DELETE  "http://localhost:5000/song/1"
+
+
+==================================================================================================================================================
+
+
+MAC OS
+
+curl -i -H "Content-Type: application/json" -X POST -d '{"songname": "summer" , "songduration" : "145" ,"songuploadtime" : "2021-03-12 17:30:21"}' http://localhost:5000/song/3
+
+curl -i -H "Content-Type: application/json" -X PUT -d '{"songname": "summer" , "songduration" : "150" ,"songuploadtime" : "2021-03-12 17:30:21"}' http://localhost:5000/song/3
+
+curl -i -H "Content-Type: application/json" -X POST -d '{"songname": "summer" , "songduration" : "15" ,"songuploadtime" : "2021-03-12 17:30:21"}' http://localhost:5000/song/
+
+http://127.0.0.1:5000/podcast/1
+
+curl -i -H "Content-Type: application/json" http://localhost:5000/audiobook/1
+
+curl -i -H "Content-Type: application/json" -X 'DELETE'  http://localhost:5000/audiobook/2
+
+
+
